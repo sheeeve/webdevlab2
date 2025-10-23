@@ -93,14 +93,16 @@ with st.form("survey_form", border=True, clear_on_submit=False):
         else:
             st.warning("Please enter a valid positive number for calories!")
 
-        with open(file_path, "r") as banana:
-            banana.readline()
-            data = sorted(banana.readlines())
+        aInfile = open(file_path, "r")
+        dataHeader = aInfile.readline()
+        data = sorted(aInfile.readlines())
+        aInfile.close()
 
-        dataAll = [banana] + data
+        dataAll = [dataHeader] + data
 
-        with open(file_path_2, "w") as f:
-            f.writelines(dataAll)
+        oInfile = open(file_path_2, "w")
+        oInfile.writelines(dataAll)
+        oInfile.close()
     
 
 reset = st.button("Reset Data")
