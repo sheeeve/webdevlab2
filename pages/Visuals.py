@@ -135,7 +135,7 @@ try:
 
     )
     low, high = st.session_state["calorie_range"]
-    filtered_df = current_data_df[(current_data_df["calories"] >= low) & (current_data_df["calories"] <= high)]
+    filtered_df = current_data_df[(current_data_df["calories"] >= 0) & (current_data_df["calories"] <= high)]
 
     pivot_df = filtered_df.pivot_table(index="day", columns="meal", values="calories", aggfunc="sum")
 
