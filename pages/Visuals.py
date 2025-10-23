@@ -34,8 +34,6 @@ st.header("Load Data")
 # 2. Load the data from 'data.json' into a Python dictionary.
 #    - Use a 'try-except' block here as well.
 
-st.info("TODO: Add your data loading logic here.")
-
 try:
     # Read the CSV file into a pandas DataFrame.
     current_data_df = pd.read_csv(file_path_2)
